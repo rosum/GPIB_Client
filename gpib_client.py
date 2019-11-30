@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from requests import post, put, get, delete
 from requests.auth import HTTPBasicAuth
