@@ -3,7 +3,8 @@
 mkdir distribution
 
 echo "--> build ditribution of GPIB Client"
-python -m pip install dist/GPIB-Client-1.0-py3-none-any.whl
+
+python setup.py bdist_wheel
 
 cp dist distibution
 cp build distribution
