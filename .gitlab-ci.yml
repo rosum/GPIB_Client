@@ -1,0 +1,16 @@
+stages:
+ - build
+
+build:
+  tags:
+    - docker
+  image: python:3.7
+  stage: build
+  before_script:
+    # setup platformio
+    - "python -m pip install --upgrade pip setuptools wheel"
+    - "pip --version"
+  script: "./build.sh"
+  artifacts:
+    paths:
+      - ./distribution
