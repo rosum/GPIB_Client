@@ -6,7 +6,7 @@ echo "--> build ditribution of GPIB Client"
 
 python setup.py bdist_wheel
 
-cp dist distibution
-cp build distribution
+cp -rf dist distibution
+cp -rf build distribution
 
 echo "--> done"
