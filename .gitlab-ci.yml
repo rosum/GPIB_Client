@@ -13,4 +13,4 @@ build:
   script: "./build.sh"
   artifacts:
     paths:
-      - ./
+      - ./dist
