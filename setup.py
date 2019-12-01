@@ -4,7 +4,7 @@ import setuptools
 setuptools.setup(
      name='gpib_client',
      version='1.0',
-     scripts=['gpib_client.py'] ,
+     scripts=['gpib_client'] ,
      author="Jan Rosum",
      author_email="jrosum1996@gmail.com",
      description="A Python Client for the GPIB RESTful Service",
