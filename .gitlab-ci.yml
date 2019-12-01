@@ -1,5 +1,6 @@
 stages:
  - build
+ - upload
 
 build:
   tags:
@@ -14,3 +15,18 @@ build:
   artifacts:
     paths:
       - ./dist
+upload:
+  tags:
+    - docker
+  image: python:3.7
+  stage: upload
+  before_script:
+    # setup platformio
+    - "python -m pip install --upgrade pip setuptools wheel"
+    - "pip install twine"
+    - "pip --version"
+  script: "./upload_to_nexus.sh"
+  only:
+    - tags
+
+
