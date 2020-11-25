@@ -19,7 +19,6 @@ class gpib_client:
             post(self.basic_url + "/register", auth=HTTPBasicAuth(user, pw))
 
     def read(self):
-
         if self.user is None:
             r = get(self.basic_url)
         else:
@@ -33,7 +32,6 @@ class gpib_client:
         return data, time
 
     def write(self, query):
-
         query_url = self.basic_url + "?q=" + query
 
         if self.user is None:
@@ -48,7 +46,6 @@ class gpib_client:
         return time
 
     def write_read(self, query):
-
         query_url = self.basic_url + "?q=" + query
 
         if self.user is None:
@@ -64,7 +61,6 @@ class gpib_client:
         return data, time
 
     def write_read_bulk(self, query, count):
-
         query_url = self.basic_url + "/count/" + str(count) + "?q=" + query
 
         if self.user is None:
@@ -85,16 +81,13 @@ class gpib_client:
         return datas, times, epoch_time
 
     def rst(self):
-
         self.write('*RST')
 
     def identify(self):
-
         data, time = self.write_read('*IDN?')
         return data
 
     def purge(self):
-
         if self.user is None:
             r = delete(self.basic_url + "/register")
         else:
